@@ -17,12 +17,12 @@ function initPage() {
 //  When search button is clicked, read the city name typed by the user
 
     function getWeather(cityName) {
-//  Using saved city name, execute a current condition get request from open weather map api
+//  Used city name to call action from weather API
         let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey;
         axios.get(queryURL)
         .then(function(response){
             console.log(response);
-//  Parse response to display current conditions
+//  Will display  response to display current conditions
         //  Method for using "date" objects obtained from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
             const currentDate = new Date(response.data.dt*1000);
             console.log(currentDate);
@@ -31,7 +31,7 @@ function initPage() {
             const year = currentDate.getFullYear();
             nameEl.innerHTML = response.data.name + " (" + month + "/" + day + "/" + year + ") ";
             let weatherPic = response.data.weather[0].icon;
-            currentPicEl.setAttribute("src","https://openweathermap.org/img/wn/" + weatherPic + "@2x.png");
+            currentPicEl.setAttribute("src","https://openweathermap.org/img/wn/" + weatherPic + "@3x.png");
             currentPicEl.setAttribute("alt",response.data.weather[0].description);
             currentTempEl.innerHTML = "Temperature: " + k2f(response.data.main.temp) + " &#176F";
             currentHumidityEl.innerHTML = "Humidity: " + response.data.main.humidity + "%";

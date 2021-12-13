@@ -1,17 +1,21 @@
 .navbar-brand {
     font-size: 36px;
+    font-family: monospace;
 }
 
 .search-header {
     font-size: 24px;
     font-weight: bold;
+    font-family: monospace;
 }
 
 .city-name {
     font-size: 30px;
+    font-family: fantasy;
 }
 
 .forecast-date {
     font-size: 18px;
+    font-family: fantasy;
 }
 
